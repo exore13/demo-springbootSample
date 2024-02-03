@@ -1,0 +1,211 @@
+{
+	"info": {
+		"_postman_id": "1860c360-e06f-4fb1-b184-8ddf757d5790",
+		"name": "SpringbootAIO",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get all Spaceships",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/spaceship/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"spaceship",
+						"all"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Sample success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/spaceship/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"spaceship",
+								"all"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 03 Feb 2024 13:02:31 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"name\": \"Popupurrin\",\n        \"weight\": 1000000\n    },\n    {\n        \"id\": 2,\n        \"name\": \"Falcon\",\n        \"weight\": 42690\n    },\n    {\n        \"id\": 52,\n        \"name\": \"JuliusCaesar\",\n        \"weight\": 20000\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Add Spaceship",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/spaceship/add?name=Popupurrin&weight=1000000",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"spaceship",
+						"add"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Popupurrin"
+						},
+						{
+							"key": "weight",
+							"value": "1000000"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Bad Request",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/spaceship/add?name=Pepe",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"spaceship",
+								"add"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Pepe"
+								}
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 03 Feb 2024 13:00:57 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"timestamp\": \"2024-02-03T13:00:57.925+00:00\",\n    \"status\": 400,\n    \"error\": \"Bad Request\",\n    \"path\": \"/spaceship/add\"\n}"
+				},
+				{
+					"name": "Sample success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/spaceship/add?name=JuliusCaesar&weight=20000",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"spaceship",
+								"add"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "JuliusCaesar"
+								},
+								{
+									"key": "weight",
+									"value": "20000"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain;charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "5"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 03 Feb 2024 13:02:19 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "Saved"
+				}
+			]
+		}
+	]
+}
