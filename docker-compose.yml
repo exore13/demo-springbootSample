@@ -1,0 +1,32 @@
+version: "3.5"
+
+networks:
+  default:
+    name: nginx-proxy
+    external: true
+
+volumes:
+  database_data:
+
+services:
+  database:
+    image: mariadb:latest
+    restart: unless-stopped
+    ports:
+      - "3306:3306"
+    volumes:
+      - database_data:/var/lib/mysql
+    container_name: springbootAio_db
+    hostname: springbootAio_dbHost
+    environment:
+      - MYSQL_ROOT_PASSWORD=rootdbpwd123
+      - MYSQL_PASSWORD=dbpwd123
+      - MYSQL_DATABASE=springbootdb
+      - MYSQL_USER=springbootdbuser
+
+  # adminer:
+  #   image: adminer
+  #   restart: always
+  #   hostname: adminer
+  #   ports:
+  #     - 8080:8080
