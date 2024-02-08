@@ -7,6 +7,7 @@ import jakarta.persistence.Id;
 
 @Entity // This tells Hibernate to make a table out of this class
 public class Spaceship {
+
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Integer id;

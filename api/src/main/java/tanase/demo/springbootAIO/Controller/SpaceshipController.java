@@ -6,6 +6,10 @@ import org.springframework.web.bind.annotation.*;
 import tanase.demo.springbootAIO.Repository.SpaceshipRepository;
 import tanase.demo.springbootAIO.Model.Spaceship;
 
+
+
+import java.util.List;
+
 @Controller // This means that this class is a Controller
 @RequestMapping(path="/spaceship") // This means URL's start with /demo (after Application path)
 public class SpaceshipController {
@@ -29,6 +33,11 @@ public class SpaceshipController {
     public @ResponseBody Iterable<Spaceship> getAllSpaceships() {
         // This returns a JSON or XML with the Spaceships
         return spaceshipRepository.findAll();
+    }
+
+    @GetMapping(path="/weight")
+    public @ResponseBody Iterable<Spaceship> findSpaceshipByWeightDescending(@RequestParam Integer weight) {
+        return spaceshipRepository.findAllByWeightOrderDesc(weight);
     }
 
 
