@@ -12,8 +12,7 @@ public class SpaceshipService {
     @Autowired
     private SpaceshipRepository spaceshipRepository;
 
-    public Iterable<Spaceship> findSpaceshipByWeightDescending(Integer weight) {
-        Sort sort = Sort.by(Sort.Direction.DESC, "weight");
-        return spaceshipRepository.findAllByWeightOrderDesc(weight);
+    public Iterable<Spaceship> findAllSpaceshipsOrderedByWeight() {
+        return spaceshipRepository.findAllByOrderByWeightDesc();
     }
 }

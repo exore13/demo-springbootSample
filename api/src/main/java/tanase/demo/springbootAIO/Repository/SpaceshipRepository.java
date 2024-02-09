@@ -9,7 +9,8 @@ import org.springframework.data.domain.Sort;
 
 public interface SpaceshipRepository extends CrudRepository<Spaceship, Integer> {
 
-        Iterable<Spaceship> findAllByWeightOrderDesc(Integer weight);
+        //Iterable<Spaceship> findAllSpaceshipsByWeightOrderDesc(Integer weight);
+        Iterable<Spaceship> findAllByOrderByWeightDesc();
 
 }
 

@@ -5,17 +5,23 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import tanase.demo.springbootAIO.Repository.SpaceshipRepository;
 import tanase.demo.springbootAIO.Model.Spaceship;
-
-
-
+import tanase.demo.springbootAIO.Service.SpaceshipService;
 import java.util.List;
+
+
 
 @Controller // This means that this class is a Controller
 @RequestMapping(path="/spaceship") // This means URL's start with /demo (after Application path)
 public class SpaceshipController {
 
+    private final SpaceshipService spaceshipService;
+
     @Autowired
     private SpaceshipRepository spaceshipRepository;
+    public SpaceshipController(SpaceshipService spaceshipService) {
+        this.spaceshipService = spaceshipService;
+    }
+
 
     @PostMapping(path="/add") // Map ONLY POST Requests
     public @ResponseBody String addNewUser (@RequestParam String name, @RequestParam Integer weight) {
@@ -36,9 +42,10 @@ public class SpaceshipController {
     }
 
     @GetMapping(path="/weight")
-    public @ResponseBody Iterable<Spaceship> findSpaceshipByWeightDescending(@RequestParam Integer weight) {
-        return spaceshipRepository.findAllByWeightOrderDesc(weight);
+    public @ResponseBody Iterable<Spaceship> findALLSpaceshipByWeightDescending() {
+        return spaceshipService.findAllSpaceshipsOrderedByWeight();
     }
-
-
 }
+
+
+
