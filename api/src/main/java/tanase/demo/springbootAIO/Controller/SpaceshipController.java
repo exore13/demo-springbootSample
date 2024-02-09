@@ -31,5 +31,14 @@ public class SpaceshipController {
         return spaceshipRepository.findAll();
     }
 
+    @GetMapping(path="/filterWeight/{weight}")
+    public @ResponseBody Iterable<Spaceship> getSpaceshipByWeight(@PathVariable int weight) {
+        return spaceshipRepository.findByWeightEquals(weight);
+    }
+
+    @GetMapping(path="/filterWeightLessThan/{weight}")
+    public @ResponseBody Iterable<Spaceship> getSpaceshipLighterThan(@PathVariable int weight) {
+        return spaceshipRepository.findByWeightLessThan(weight);
+    }
 
 }

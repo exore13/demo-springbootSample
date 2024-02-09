@@ -206,6 +206,211 @@
 					"body": "Saved"
 				}
 			]
+		},
+		{
+			"name": "Get Cat Fact",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/cat/fact",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cat",
+						"fact"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Cat Fact",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/cat/fact",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cat",
+								"fact"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain;charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "134"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 09 Feb 2024 09:02:33 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "It was illegal to slay cats in ancient Egypt, in large part because they provided the great service of controlling the rat population."
+				}
+			]
+		},
+		{
+			"name": "Find Spaceship by Weight",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/spaceship/filterWeight/42690",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"spaceship",
+						"filterWeight",
+						"42690"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Find Spaceship by Weight",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/spaceship/filterWeight/42690",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"spaceship",
+								"filterWeight",
+								"42690"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 09 Feb 2024 08:58:45 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 2,\n        \"name\": \"Falcon\",\n        \"weight\": 42690\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Find Spaceshill by Weight LT",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/spaceship/filterWeightLessThan/20001",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"spaceship",
+						"filterWeightLessThan",
+						"20001"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Find Spaceshill by Weight LT",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/spaceship/filterWeightLessThan/20001",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"spaceship",
+								"filterWeightLessThan",
+								"20001"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 09 Feb 2024 09:02:05 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 52,\n        \"name\": \"JuliusCaesar\",\n        \"weight\": 20000\n    },\n    {\n        \"id\": 102,\n        \"name\": \"Pepino\",\n        \"weight\": 39\n    }\n]"
+				}
+			]
 		}
 	]
 }
