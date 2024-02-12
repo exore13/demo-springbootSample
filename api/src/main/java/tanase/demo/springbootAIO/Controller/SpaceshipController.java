@@ -56,7 +56,10 @@ public class SpaceshipController {
         return spaceshipRepository.findByWeightEquals(weight);
     }
 
-    
+    @GetMapping(path="/filterByAlphabeth") //esto pondra naves por orden alfabetico
+    public @ResponseBody Iterable<Spaceship> getSpaceshipByAlph() {
+        return  spaceshipRepository.findALLByOrderByName();
+    }
 
 }
 

@@ -14,6 +14,7 @@ public interface SpaceshipRepository extends CrudRepository<Spaceship, Integer> 
 
         List<Spaceship> findByWeightEquals(Integer weight);
         List<Spaceship> findByWeightLessThan(Integer weight);
+        List<Spaceship> findALLByOrderByName();
 
 }
 
