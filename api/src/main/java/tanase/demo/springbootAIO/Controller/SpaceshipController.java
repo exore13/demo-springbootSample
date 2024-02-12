@@ -41,10 +41,21 @@ public class SpaceshipController {
         return spaceshipRepository.findAll();
     }
 
-    @GetMapping(path="/weight")
+    @GetMapping(path="/weight")  //esto encuentra todas naves por peso, la mas pesada sera primera
     public @ResponseBody Iterable<Spaceship> findALLSpaceshipByWeightDescending() {
         return spaceshipService.findAllSpaceshipsOrderedByWeight();
     }
+
+    @GetMapping(path="/filterWeightLessThan/{weight}") //esto encuentra naves mas ligeras del peso indicado
+    public @ResponseBody Iterable<Spaceship> getSpaceshipLighterThan(@PathVariable int weight) {
+        return spaceshipRepository.findByWeightLessThan(weight);
+    }
+
+    @GetMapping(path="/filterWeight/{weight}") //esto encuentra naves por peso
+    public @ResponseBody Iterable<Spaceship> getSpaceshipByWeight(@PathVariable int weight) {
+        return spaceshipRepository.findByWeightEquals(weight);
+    }
+
 }
 
 
