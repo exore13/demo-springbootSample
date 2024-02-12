@@ -56,6 +56,8 @@ public class SpaceshipController {
         return spaceshipRepository.findByWeightEquals(weight);
     }
 
+    
+
 }
 
 
